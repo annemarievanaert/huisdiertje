@@ -1,14 +1,16 @@
 input.onButtonPressed(Button.A, function () {
     honger += honger + 10
 })
-input.onButtonPressed(Button.AB, function () {
-	
+input.onGesture(Gesture.Shake, function () {
+    basic.showIcon(IconNames.Confused)
+    bang += 5
 })
 input.onButtonPressed(Button.B, function () {
     basic.showNumber(honger)
 })
 let honger = 0
 honger = 0
+let bang = 0
 basic.forever(function () {
     honger += 1
     basic.showLeds(`
@@ -30,5 +32,13 @@ basic.forever(function () {
     if (honger == 60) {
         basic.showIcon(IconNames.Skull)
         honger = 0
+    }
+})
+basic.forever(function () {
+    if (bang == 15) {
+        basic.showIcon(IconNames.Angry)
+    }
+    if (bang == 20) {
+        basic.showIcon(IconNames.Skull)
     }
 })
