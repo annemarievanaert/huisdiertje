@@ -1,14 +1,20 @@
 input.onButtonPressed(Button.A, function () {
-    basic.showNumber(blij)
+    honger += -10
 })
-input.onGesture(Gesture.Shake, function () {
-    basic.showIcon(IconNames.Confused)
+input.onButtonPressed(Button.B, function () {
+    basic.showNumber(honger)
 })
-let blij = 0
-blij = 0
+let honger = 0
+honger = 0
 basic.forever(function () {
-    blij += -2
-    if (blij < 1) {
+    honger += 1
+    if (input.logoIsPressed()) {
+        basic.showIcon(IconNames.Heart)
+        basic.pause(100)
+        basic.showIcon(IconNames.SmallHeart)
+    } else if (honger >= 20) {
+        basic.showIcon(IconNames.Angry)
+    } else {
         basic.showIcon(IconNames.Happy)
     }
 })
