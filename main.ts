@@ -12,7 +12,7 @@ basic.forever(function () {
         basic.showIcon(IconNames.Heart)
         basic.pause(100)
         basic.showIcon(IconNames.SmallHeart)
-    } else if (honger >= 20) {
+    } else if (honger >= 30) {
         basic.showIcon(IconNames.Angry)
     } else {
         basic.showIcon(IconNames.Happy)
