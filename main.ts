@@ -4,17 +4,43 @@ input.onButtonPressed(Button.A, function () {
 input.onButtonPressed(Button.B, function () {
     basic.showNumber(honger)
 })
+input.onSound(DetectedSound.Loud, function () {
+    basic.showLeds(`
+        . . . . .
+        . . . . .
+        . # . # .
+        # . # . #
+        . . . . .
+        `)
+    basic.pause(5000)
+})
 let honger = 0
 honger = 0
 basic.forever(function () {
     honger += 1
     if (input.logoIsPressed()) {
-        basic.showIcon(IconNames.Heart)
-        basic.pause(100)
-        basic.showIcon(IconNames.SmallHeart)
+        basic.showLeds(`
+            . . . . .
+            . . . . .
+            # # # # #
+            # . . . #
+            . # # # .
+            `)
     } else if (honger >= 30) {
-        basic.showIcon(IconNames.Angry)
+        basic.showLeds(`
+            . . . . .
+            . . . . .
+            # # # # #
+            # . # . #
+            . . . . .
+            `)
     } else {
-        basic.showIcon(IconNames.Happy)
+        basic.showLeds(`
+            . . . . .
+            . . . . .
+            # . . . #
+            . # # # .
+            . . . . .
+            `)
     }
 })
