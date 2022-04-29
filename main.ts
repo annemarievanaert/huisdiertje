@@ -1,18 +1,17 @@
 input.onButtonPressed(Button.A, function () {
     honger += -10
 })
-input.onButtonPressed(Button.B, function () {
-    basic.showNumber(honger)
-})
-input.onSound(DetectedSound.Loud, function () {
+input.onGesture(Gesture.Shake, function () {
     basic.showLeds(`
         . . . . .
         . . . . .
-        . # . # .
+        # # # # #
         # . # . #
         . . . . .
         `)
-    basic.pause(5000)
+})
+input.onButtonPressed(Button.B, function () {
+    basic.showNumber(honger)
 })
 let honger = 0
 honger = 0
