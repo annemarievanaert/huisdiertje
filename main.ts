@@ -9,6 +9,7 @@ input.onGesture(Gesture.Shake, function () {
         # . # . #
         . . . . .
         `)
+    basic.pause(5000)
 })
 input.onButtonPressed(Button.B, function () {
     basic.showNumber(honger)
@@ -16,7 +17,7 @@ input.onButtonPressed(Button.B, function () {
 let honger = 0
 honger = 0
 basic.forever(function () {
-    honger += 1
+    honger += 0.5
     if (input.logoIsPressed()) {
         basic.showLeds(`
             . . . . .
